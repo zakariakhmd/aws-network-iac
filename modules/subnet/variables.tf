@@ -27,14 +27,26 @@ variable "map_public_ip_on_launch" {
   default     = false
 }
 
+variable "create_internet_route" {
+  description = "Whether to create a 0.0.0.0/0 route to the Internet Gateway."
+  type        = bool
+  default     = false
+}
+
 variable "internet_gateway_id" {
-  description = "If set, a 0.0.0.0/0 route to this Internet Gateway is created."
+  description = "Internet Gateway used for the default route when create_internet_route is true."
   type        = string
   default     = null
 }
 
+variable "create_nat_route" {
+  description = "Whether to create a 0.0.0.0/0 route to the NAT Gateway."
+  type        = bool
+  default     = false
+}
+
 variable "nat_gateway_id" {
-  description = "If set, a 0.0.0.0/0 route to this NAT Gateway is created."
+  description = "NAT Gateway used for the default route when create_nat_route is true."
   type        = string
   default     = null
 }

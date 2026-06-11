@@ -40,7 +40,7 @@ resource "aws_route_table" "this" {
 
 # Public tier: default route to the Internet Gateway.
 resource "aws_route" "internet_gateway" {
-  count = var.internet_gateway_id != null ? 1 : 0
+  count = var.create_internet_route ? 1 : 0
 
   route_table_id         = aws_route_table.this.id
   destination_cidr_block = "0.0.0.0/0"
@@ -49,7 +49,7 @@ resource "aws_route" "internet_gateway" {
 
 # Private tier: default route to the NAT Gateway.
 resource "aws_route" "nat_gateway" {
-  count = var.nat_gateway_id != null ? 1 : 0
+  count = var.create_nat_route ? 1 : 0
 
   route_table_id         = aws_route_table.this.id
   destination_cidr_block = "0.0.0.0/0"

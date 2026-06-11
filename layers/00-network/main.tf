@@ -76,6 +76,7 @@ module "public_subnets" {
   tier                    = "public"
   subnets                 = local.public_subnets
   map_public_ip_on_launch = true
+  create_internet_route   = true
   internet_gateway_id     = module.vpc.internet_gateway_id
   tags                    = local.tags
 }
@@ -102,10 +103,11 @@ module "private_subnets" {
 
   name_prefix    = local.name_prefix
   vpc_id         = module.vpc.vpc_id
-  tier           = "private"
-  subnets        = local.private_subnets
-  nat_gateway_id = module.nat_gateway.nat_gateway_id
-  tags           = local.tags
+  tier             = "private"
+  subnets          = local.private_subnets
+  create_nat_route = true
+  nat_gateway_id   = module.nat_gateway.nat_gateway_id
+  tags             = local.tags
 }
 
 # ---------------------------------------------------------------------------
