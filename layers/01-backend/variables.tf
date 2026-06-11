@@ -25,7 +25,7 @@ variable "state_bucket" {
 variable "instance_type" {
   description = "EC2 instance type for the backend instance."
   type        = string
-  default     = "t2.micro"
+  default     = "t3.micro"
 }
 
 variable "root_volume_size" {
