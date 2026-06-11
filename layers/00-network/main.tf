@@ -101,8 +101,8 @@ module "nat_gateway" {
 module "private_subnets" {
   source = "../../modules/subnet"
 
-  name_prefix    = local.name_prefix
-  vpc_id         = module.vpc.vpc_id
+  name_prefix      = local.name_prefix
+  vpc_id           = module.vpc.vpc_id
   tier             = "private"
   subnets          = local.private_subnets
   create_nat_route = true

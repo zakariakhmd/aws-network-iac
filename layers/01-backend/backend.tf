@@ -7,7 +7,7 @@
 
 terraform {
   backend "s3" {
-    bucket  = "aws-network-iac-tfstate-changeme"
+    bucket  = "aws-network-iac-tfstate"
     key     = "01-backend/terraform.tfstate"
     region  = "us-east-1"
     encrypt = true

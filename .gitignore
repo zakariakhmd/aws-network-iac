@@ -1,0 +1,44 @@
+# Local .terraform directories (provider plugins, modules cache)
+**/.terraform/*
+**/.terraform/
+
+# Terraform state files (may contain secrets — manage via remote backend)
+*.tfstate
+*.tfstate.*
+*.tfstate.backup
+
+# Crash log files
+crash.log
+crash.*.log
+
+# Saved plan files (often contain sensitive values)
+*.tfplan
+tfplan
+plan.out
+
+# Override files — typically used for local overrides not meant for VCS
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# CLI configuration / credential files
+.terraformrc
+terraform.rc
+
+# Ignore transient lock info
+.terraform.tfstate.lock.info
+
+# Variable files — uncomment if your *.tfvars hold secrets and should NOT be committed
+# *.tfvars
+# *.tfvars.json
+
+# Note: .terraform.lock.hcl is intentionally NOT ignored — commit it to pin provider versions.
+
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+*.swp
+*~
+.idea/
+.vscode/

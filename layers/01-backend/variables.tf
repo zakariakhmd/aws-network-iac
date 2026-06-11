@@ -19,7 +19,7 @@ variable "region" {
 variable "state_bucket" {
   description = "Name of the S3 bucket holding remote state (used to read the network layer's outputs)."
   type        = string
-  default     = "aws-network-iac-tfstate-changeme"
+  default     = "aws-network-iac-tfstate"
 }
 
 variable "instance_type" {
