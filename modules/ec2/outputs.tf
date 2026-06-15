@@ -3,6 +3,11 @@ output "instance_id" {
   value       = aws_instance.this.id
 }
 
+output "instance_name" {
+  description = "Name tag of the EC2 instance."
+  value       = aws_instance.this.tags["Name"]
+}
+
 output "private_ip" {
   description = "Private IP address of the EC2 instance."
   value       = aws_instance.this.private_ip
